@@ -5,8 +5,8 @@ import Client from 'shopify-buy';
 import './app.css';
 
 const client = Client.buildClient({
-  storefrontAccessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
-  domain: 'graphql.myshopify.com'
+  storefrontAccessToken: '7301dedacfd3710acf80b7325d95a259',
+  domain: 'richmofo.myshopify.com'
 });
 
 ReactDOM.render(
