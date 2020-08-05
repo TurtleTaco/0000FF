@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+// import App from './App';
+import Main from './Main';
 import Client from 'shopify-buy';
 import './app.css';
 
@@ -10,6 +11,6 @@ const client = Client.buildClient({
 });
 
 ReactDOM.render(
-  <App client={client}/>,
+  <Main client={client}/>,
   document.getElementById('root')
 );
