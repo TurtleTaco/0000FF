@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProductsHorizontalScroll from './components/ProductsHorizontalScroll'
 import Products from './components/Products';
 import Cart from './components/Cart';
 
@@ -17,6 +18,8 @@ class App extends Component {
     this.addVariantToCart = this.addVariantToCart.bind(this);
     this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
+
+  
   }
 
   componentWillMount() {
@@ -82,34 +85,45 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <header className="App__header">
-          {!this.state.isCartOpen &&
-            <div className="App__view-cart-wrapper">
-              <button className="App__view-cart" onClick={()=> this.setState({isCartOpen: true})}>Cart</button>
-            </div>
-          }
-          <div className="App__title">
-            <h1>{this.state.shop.name}: React Example</h1>
-            <h2>{this.state.shop.description}</h2>
-          </div>
-        </header>
-        <Products
-          products={this.state.products}
-          client={this.props.client}
-          addVariantToCart={this.addVariantToCart}
-        />
-        <Cart
-          checkout={this.state.checkout}
-          isCartOpen={this.state.isCartOpen}
-          handleCartClose={this.handleCartClose}
-          updateQuantityInCart={this.updateQuantityInCart}
-          removeLineItemInCart={this.removeLineItemInCart}
-        />
-      </div>
-    );
+
+    <div className = "App">
+      <ProductsHorizontalScroll
+         client={client}
+         products={this.testPs}
+      />
+        
+    </div>
   }
+
+  // render() {
+  //   return (
+  //     <div className="App">
+  //       <header className="App__header">
+  //         {!this.state.isCartOpen &&
+  //           <div className="App__view-cart-wrapper">
+  //             <button className="App__view-cart" onClick={()=> this.setState({isCartOpen: true})}>Cart</button>
+  //           </div>
+  //         }
+  //         <div className="App__title">
+  //           <h1>{this.state.shop.name}: React Example</h1>
+  //           <h2>{this.state.shop.description}</h2>
+  //         </div>
+  //       </header>
+  //       <Products
+  //         products={this.state.products}
+  //         client={this.props.client}
+  //         addVariantToCart={this.addVariantToCart}
+  //       />
+  //       <Cart
+  //         checkout={this.state.checkout}
+  //         isCartOpen={this.state.isCartOpen}
+  //         handleCartClose={this.handleCartClose}
+  //         updateQuantityInCart={this.updateQuantityInCart}
+  //         removeLineItemInCart={this.removeLineItemInCart}
+  //       />
+  //     </div>
+  //   );
+  // }
 }
 
 export default App;

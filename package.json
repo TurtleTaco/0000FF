@@ -9,6 +9,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-moment": "^0.9.7",
+    "react-native": "^0.63.2",
     "shopify-buy": "^1.2.0"
   },
   "devDependencies": {

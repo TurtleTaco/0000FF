@@ -1,0 +1,75 @@
+.ProductContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+.ProductCardCover {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.ProductCardTitle {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    align-self: start;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color : black;
+    font-size: 1.5vw; 
+}
+
+.ProductCardPrice {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3; 
+    align-self: end;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color: black;
+    font-size: 1.5vw; 
+}
+
+.ProductCardDescription {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    align-self: start;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color: grey;
+    font-size: 1vw; 
+}
+
+/* .ProductCard {
+    width: 95%;
+}
+
+.ProductCardCover {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.ProductCardTitle {
+    height: auto;
+    overflow : hidden;  
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color:black
+}
+
+.ProductCardPrice {
+    height: auto;
+    overflow : hidden;  
+    display: inline;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color:black
+}
+
+.ProductCardDescription {
+    height: auto;
+    overflow : hidden;  
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color:grey
+
+} */

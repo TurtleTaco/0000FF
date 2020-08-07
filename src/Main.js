@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Button, DatePicker, version } from "antd";
 import 'antd/dist/antd.css';
-import './Main.css';
+import './component_styles/Main.css';
+import ProductsHorizontalScroll from './components/ProductsHorizontalScroll'
+import './component_shared/Fonts.css'
 
 class Main extends Component {
     constructor() {
@@ -12,30 +14,25 @@ class Main extends Component {
             isMainOpen: false  
         };
 
+        this.testPs = [{imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"},
+        {imageUrl : "https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/sportswear-french-terry-shorts-svkWCD.jpg",imageTitle : "Sample image"}]
+        this.posterUrl = 'https://www.ebikemotion.com/e-beauty/wp-content/uploads/2014/05/header3.jpg';
+
         // Add handlers here
 
     } // End constructor
-
-    componentWillMount() {
-        // Handle "Will Mount" optionss
-        this.props.client.checkout.create().then((res) => {
-            this.setState({
-                checkout: res,
-            });
-        });
-      
-        this.props.client.product.fetchAll().then((res) => {
-            this.setState({
-                products: res,
-            });
-        });
-    
-        this.props.client.shop.fetchInfo().then((res) => {
-            this.setState({
-                shop: res,
-            });
-        });
-    }
 
     componentDidMount() {
         // Handle "After Mound" options
@@ -45,13 +42,15 @@ class Main extends Component {
     // Render starts here
     render() {
         return (
-            <div className="Main">
-                <h1>antd version: {version}</h1>
-                <DatePicker />
-                <Button type="primary" style={{ marginLeft: 8 }}>
-                    Primary Button
-                </Button>
+        <div className = 'Main'>
+            <img className = 'Poster' src = {this.posterUrl} />
+            <div className = 'HorizontalScrollHeaderContainer'>
+                <p className = 'HorizontalScrollHeaderTitle'>Trending now</p>
             </div>
+            <ProductsHorizontalScroll
+                products={this.testPs}
+            />
+        </div>
         );
     }
 

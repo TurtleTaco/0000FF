@@ -1,0 +1,19 @@
+.Main {
+    margin-left: 5vw;
+    margin-top: 10vw;
+}
+.Poster {
+    width: 90vw;
+}
+
+.HorizontalScrollHeaderContainer {
+    width: 90vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.HorizontalScrollHeaderTitle {
+    margin-top : 1em;
+    margin-bottom: 1em;
+    size : var(--large-text)
+}

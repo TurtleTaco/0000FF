@@ -1,0 +1,13 @@
+.HorizontalScroll {
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.HorizontalScrollCell {
+    flex: 0 0 auto ! important;
+    width : 30vw;
+    margin-left : 0.5vw; 
+    margin-right : 0.5vw; 
+}

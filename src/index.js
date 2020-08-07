@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Main from './Main';
 import Client from 'shopify-buy';
 import './app.css';
+import './component_shared/Fonts.css'
+import ProductsHorizontalScroll from './components/ProductsHorizontalScroll';
 
 const client = Client.buildClient({
   storefrontAccessToken: '7301dedacfd3710acf80b7325d95a259',
@@ -11,6 +13,7 @@ const client = Client.buildClient({
 });
 
 ReactDOM.render(
-  <Main client={client}/>,
+  <Main  
+  />,
   document.getElementById('root')
 );
