@@ -1,7 +1,7 @@
 node_modules/
-shop_tailwind/node_modules
-shop_tailwind/src/tailwind.output.css
-shop_tailwind/.DS_Store
+CRA_tailwind/node_modules
+CRA_tailwind/src/tailwind.output.css
+CRA_tailwind/.DS_Store
 0000FF_tailwind/node_modules
 0000FF_tailwind/src/tailwind.output.css
 0000FF_tailwind/.DS_Store
