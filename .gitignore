@@ -1,7 +1,7 @@
-node_modules/
-CRA_tailwind/node_modules
-CRA_tailwind/src/tailwind.output.css
-CRA_tailwind/.DS_Store
-0000FF_tailwind/node_modules
-0000FF_tailwind/src/tailwind.output.css
-0000FF_tailwind/.DS_Store
+react-shopify-template/node_modules
+CRA-tailwind/node_modules
+CRA-tailwind/src/tailwind.output.css
+CRA-tailwind/.DS_Store
+react-shopify-tailwind/node_modules
+react-shopify-tailwind/src/tailwind.output.css
+react-shopify-tailwind/.DS_Store
