@@ -1,1 +1,3 @@
 node_modules/
+shop_tailwind/node_modules
+shop_tailwind/src/tailwind.output.css
