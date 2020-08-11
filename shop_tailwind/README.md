@@ -11,6 +11,8 @@ The compiled ```tailwind.output.css``` resides in ```./src``` folder with ```tai
 
 Changes in ```tailwind.css``` is automatically watched and recompiled alongside CRA build flow. Though ```Tailwindcss``` provides a wide range of pre-defined css classes, if customization is desired, any css overrides should be contained inside ```tailwind.css```.
 
+In addition, any changes in ```src/**/*.css``` and ```src/**/*.scss``` are also watched and automatically recompiled.
+
 ### Purge CSS
 CSS purge is supported after ```Tailwindcss 1.4.0``` and is achieved by including a simple config file [tailwind.config.js](./tailwind.config.js). It detected the CSS classes used across the project and only compiled the corresponding css attributes in the output ```tailwind.output.css```, drastically decreasing the file size.
 
