@@ -1,1 +1,8 @@
-node_modules/
+react-shopify-template/node_modules
+react-shopify-template/.DS_Store
+CRA-tailwind/node_modules
+CRA-tailwind/src/tailwind.output.css
+CRA-tailwind/.DS_Store
+react-shopify-tailwind/node_modules
+react-shopify-tailwind/src/tailwind.output.css
+react-shopify-tailwind/.DS_Store
