@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import "./tailwind.output.css";
 
 // Import components
-// import Collage from "./Collage";
-import Deck from "./Deck";
+import Collage from "./Collage";
+import App from "./App";
 
-ReactDOM.render(<Deck />, document.getElementById("deck"));
-// ReactDOM.render(<Collage />, document.getElementById("collage"));
+ReactDOM.render(<App />, document.getElementById("root"));
