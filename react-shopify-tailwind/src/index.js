@@ -4,5 +4,6 @@ import "./tailwind.output.css";
 
 // Import components
 import Collage from "./Collage";
+import App from "./App";
 
-ReactDOM.render(<Collage />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
