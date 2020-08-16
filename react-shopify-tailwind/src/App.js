@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+
 import Header from "./Header";
 import Collage from "./Collage";
 import Deck from "./Deck";
 import "./Dropdown.css";
+import "./Footer.css"
+import HeaderItem from "./HeaderItem";
 
 class App extends Component {
   constructor() {
@@ -34,12 +39,6 @@ class App extends Component {
   }
 
   render() {
-    var hoverStyle;
-    if (this.state.menuItemHover) {
-      hoverStyle = "text-center pl-5 py-2 text-xs text-black bg-white";
-    } else {
-      hoverStyle = "text-center pl-5 py-2 text-xs text-white bg-black";
-    }
 
     return (
       <div className="min-w-full bg-grey-500 ">
@@ -47,6 +46,7 @@ class App extends Component {
           {" "}
           Covid-19 Store Update{" "}
         </div>
+
         <Header />
 
         <div className="px-8">
@@ -67,6 +67,32 @@ class App extends Component {
           }}
         >
           <Deck></Deck>
+        </div>
+
+        <div className="flex-col">
+          <div className="flex mb-32">
+            <HeaderItem title='Policies'/>
+            <HeaderItem title='Customer Service' />
+            <HeaderItem title='Company' />
+            <HeaderItem title='Privacy' />
+          </div>
+          <div className="flex ml-6 mb-5">
+
+            <div id="FooterTextBrand" className="flex-1 text-sm float-right">@2020 #0000FF</div>
+            <FacebookIcon
+              className="float-right ml-3"
+              onClick={this.handleHeaderMenuClick}
+            />
+             <InstagramIcon
+              className="float-right ml-3"
+              onClick={this.handleHeaderMenuClick}
+            />
+             <TwitterIcon
+              className="float-right ml-3 mr-12"
+              onClick={this.handleHeaderMenuClick}
+            />
+            
+          </div>
         </div>
       </div>
     );

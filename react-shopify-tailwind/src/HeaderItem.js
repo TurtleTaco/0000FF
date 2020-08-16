@@ -8,7 +8,7 @@ class HeaderItem extends Component {
         isHovered : false,
     }
 
-    this.hoverStyle = "float-right ml-6 text-xs "
+    this.hoverStyle = "float-right ml-6 ".concat(this.props.fontSize + " ");
   }
 
   handleMouseHover = () => {
@@ -25,10 +25,15 @@ class HeaderItem extends Component {
                 onMouseLeave = {this.handleMouseHover} 
                 onMouseEnter = {this.handleMouseHover}>
                 {this.props.title}
-                </span>
+            </span>
         </div>
     );
   }
+
+}
+
+HeaderItem.defaultProps = {
+    fontSize : "text-xs",
 }
 
 export default HeaderItem;

@@ -14,7 +14,9 @@ class Header extends Component {
       womanDropdownOpen: false,
     };
 
+    this.wrapperRef = React.createRef();
     this.dropdownStyle = "absolute w-screen z-10 ";
+
   }
 
   handleHeaderMenuClick = () => {
@@ -23,9 +25,25 @@ class Header extends Component {
     });
   };
 
+  handleClickOutside = (event) => {
+      if(this.wrapperRef && !this.wrapperRef.current.contains(event.target)){
+            this.setState({
+                menuOpened: false,
+            })
+      }
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
   render() {
     return (
-      <div>
+      <div ref={this.wrapperRef}>
         {/* Header */}
         <div className="flex items-center mt-1 border-b-2">
           <div className="flex-shrink-0 px-4 ">

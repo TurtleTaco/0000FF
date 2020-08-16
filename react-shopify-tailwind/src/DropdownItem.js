@@ -22,10 +22,10 @@ class DropdownItem extends Component {
     return (
         <div>
             <li className={this.hoverStyle.concat(this.state.isHovered ? 
-                'text-white bg-white bg-opacity-25 dropdownItemHovered' : 'text-white bg-black')} 
+                'text-black bg-gray-100 dropdownItemHovered' : 'text-white bg-black')} 
                 onMouseLeave = {this.handleDropdownItemMouseHover} 
                 onMouseEnter = {this.handleDropdownItemMouseHover}>
-                {this.props.title.concat(this.state.isHovered ? " ->" : "")}
+                {this.props.title.concat(this.state.isHovered ? "" : "")}
             </li>             
         </div>
     );
