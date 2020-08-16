@@ -9,7 +9,11 @@ const cards = [
   "https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg",
   "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg",
   "https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg",
-  "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IMG_4508.JPG?v=1597272366",
+  "https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg",
 ];
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -81,7 +85,6 @@ function Deck() {
         style={{
           transform: interpolate([rot, scale], trans),
           backgroundImage: `url(${cards[i]})`,
-          backgroundSize: `contain`,
         }}
       />
     </animated.div>

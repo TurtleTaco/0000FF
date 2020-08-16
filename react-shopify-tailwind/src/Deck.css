@@ -1,24 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  overscroll-behavior-y: contain;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  position: fixed;
-  overflow: hidden;
-}
-
 #deck {
   background: white;
-  position: fixed;
+  /* position: fixed; */ /* Why this fix my problem of main page not scrolling down */
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -45,6 +27,6 @@ body {
   max-height: 570px;
   will-change: transform;
   border-radius: 10px;
-  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.2),
+  box-shadow: 0 12.5px 100px -5px rgba(50, 50, 73, 0.2),
     0 10px 10px -10px rgba(50, 50, 73, 0.2);
 }
