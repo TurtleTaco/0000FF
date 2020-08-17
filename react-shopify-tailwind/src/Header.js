@@ -4,6 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DropdownItem from "./DropdownItem";
 import HeaderItem from "./HeaderItem";
 import "./Dropdown.css";
+import "./Font.css";
 
 class Header extends Component {
   constructor() {
@@ -16,7 +17,6 @@ class Header extends Component {
 
     this.wrapperRef = React.createRef();
     this.dropdownStyle = "absolute w-screen z-10 ";
-
   }
 
   handleHeaderMenuClick = () => {
@@ -26,31 +26,31 @@ class Header extends Component {
   };
 
   handleClickOutside = (event) => {
-      if(this.wrapperRef && !this.wrapperRef.current.contains(event.target)){
-            this.setState({
-                menuOpened: false,
-            })
-      }
-  }
+    if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+      this.setState({
+        menuOpened: false,
+      });
+    }
+  };
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
+    document.addEventListener("mousedown", this.handleClickOutside);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   render() {
     return (
       <div ref={this.wrapperRef}>
         {/* Header */}
-        <div className="flex items-center mt-1 border-b-2">
+        <div className="flex items-center mt-1 border-b">
           <div className="flex-shrink-0 px-4 ">
             <img
               className="w-32 md:w-56 pt-3 pb-3"
               src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
-              style={{ width: `150px`, height: `auto` }}
+              style={{ width: `100px`, height: `auto` }}
             />
           </div>
 
@@ -62,7 +62,7 @@ class Header extends Component {
             <SearchIcon className="float-right ml-3" />
           </div>
 
-          <div className="hidden px-10 py-2 md:block md:flex-1">
+          <div className="hidden px-10 py-2 md:block md:flex-1 FrontPageShopButtonFont">
             <HeaderItem title="Search" />
             <HeaderItem title="Woman" />
             <HeaderItem title="Man" />
