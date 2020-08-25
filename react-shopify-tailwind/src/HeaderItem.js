@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./DropdownItem.css";
 
 class HeaderItem extends Component {
   constructor(props) {
