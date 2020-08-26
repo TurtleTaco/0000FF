@@ -69,14 +69,14 @@ class ProductListing extends Component {
         <DropdownItem title="Name" />,
         <DropdownItem title="Release Time" />];
 
-        let filterOptions = [ <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>,
-        <div className="flex-1">hahaha</div>];
+        let filterOptions = [ <DropdownItem title="a" />,
+        <DropdownItem title="a" />,
+        <DropdownItem title="a" />,<DropdownItem title="a" />,
+        <DropdownItem title="a" />,
+        <DropdownItem title="a" />,<DropdownItem title="a" />,
+        <DropdownItem title="a" />,
+        <DropdownItem title="a" />];
+
 
         let products = this.products.map((product) => {
             return (
@@ -92,15 +92,11 @@ class ProductListing extends Component {
                 <Header />
 
                 <div className="mx-3"
-                    onMouseLeave={this.HandleNavigationMouseLeaveEventChange}
-                    style = {
-                        {}
-                    }>
+                    onMouseLeave={this.HandleNavigationMouseLeaveEventChange}>
 
-                    <div className={`${this.navigationWidthSmallScreen} md:${this.navigationWidthMediunScreen} pl-6 inline-block text-left text-xs FrontPageShopButtonFont`}>
+                    <div className={`${this.navigationWidthSmallScreen} md:${this.navigationWidthMediunScreen} inline-block pl-6 text-left text-xs FrontPageShopButtonFont`}>
                         
-                        All <ArrowRightIcon 
-                           style = {{marginBottom : `2px`}}/>
+                        All <ArrowRightIcon style = {{marginBottom : `2px`}}/>
                     </div>
                     
                     <div className={`${this.navigationWidthSmallScreen} md:${this.filterDropdownWidthMediunScreen} inline-block`}
@@ -112,9 +108,18 @@ class ProductListing extends Component {
                                 borderRight: `1px solid #a0acc0`,
                                 borderLeft: `1px solid #a0acc0`
                             }}>
-                            Filter
-                            <ArrowDropDownIcon/>
+                            Filter <ArrowDropDownIcon/>
                         </div>
+
+                        <div className={`hidden relative md:block md:w-full ${this.filterDropdownWidthMediunScreen}`}
+                            onMouseLeave={this.HandleFilterHoverEventChange}>
+                            <div className={"absolute z-10 w-full ".concat(this.state.filterDropdownOpened ? styles.dropdownOpened : styles.dropdownClosed)}>
+                                <ul>
+                                    {filterOptions}
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div className={`${this.sortDropdownWidthSmallScreen} md:${this.sortDropdownWidthMediunScreen} inline-block`}
@@ -124,14 +129,12 @@ class ProductListing extends Component {
                         <div className={`w-full inline-block text-center text-xs FrontPageShopButtonFont my-2`}
                             style={{ borderRight: `1px solid #e2e8f0`,}}>
 
-                            Sort by : Name
-                            <ArrowDropDownIcon/>
+                            Sort by : Name <ArrowDropDownIcon/>
                         </div>
 
-                        <div className={`hidden md:block relative w-screen md:w-full ${this.sortDropdownWidthMediunScreen}`}
+                        <div className={`hidden relative md:block md:w-full ${this.sortDropdownWidthMediunScreen}`}
                             onMouseLeave={this.HandleSortHoverEventChange}>
-                            <div className={"absolute z-10 w-full ".concat(this.state.sortDropdownOpened ? styles.dropdownOpened : styles.dropdownClosed)}
-                                style={{ left: `md:500%` }}>
+                            <div className={"absolute z-10 w-full ".concat(this.state.sortDropdownOpened ? styles.dropdownOpened : styles.dropdownClosed)}>
                                 <ul>
                                     {sortOptions}
                                 </ul>
@@ -142,28 +145,33 @@ class ProductListing extends Component {
                 </div>
 
                 
-                <div className="w-screen">
+                <div className="w-screen md:hidden">
+
                     <div className={"z-10 w-full bg-black ".concat(
-                        this.state.filterDropdownOpened ? "absolute" : "hidden"
-                    )}
-                    onMouseLeave={this.HandleFilterHoverEventChange}>
+                        this.state.filterDropdownOpened ? "absolute" : "hidden")}
+                        onMouseLeave={this.HandleFilterHoverEventChange}>
+
                         <div className="flex flex-col">
-                            {filterOptions}
+                            <ul>
+                                {filterOptions}
+                            </ul>
                         </div>
                     </div>
 
-                    <div className={`block w-full md:hidden`}
-                            onMouseLeave={this.HandleSortHoverEventChange}>
-                            <div className={"absolute z-10 w-full ".concat(this.state.sortDropdownOpened ? styles.dropdownOpened : styles.dropdownClosed)}>
+                    <div className={"z-10 w-full bg-black ".concat(
+                        this.state.sortDropdownOpened ? "absolute" : "hidden")}
+                        onMouseLeave={this.HandleSortHoverEventChange}>
+
+                            <div className="flex flex-col">
                                 <ul>
                                    {sortOptions}
                                 </ul>
                             </div>
-                        </div>
+                    </div>
 
                 </div>
 
-                <div className="mx-1 md:w-4/5 md: float-right">
+                <div className="mx-1">
                     {products}
                 </div>
 
@@ -172,5 +180,7 @@ class ProductListing extends Component {
     }
 
 }
+
+
 
 export default ProductListing;
