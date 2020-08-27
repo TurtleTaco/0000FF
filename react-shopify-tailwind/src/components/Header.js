@@ -77,7 +77,9 @@ class Header extends Component {
         {
           <div
             className={this.dropdownStyle.concat(
-              this.state.menuOpened ? styles.dropdownOpened : styles.dropdownClosed
+              this.state.menuOpened
+                ? styles.dropdownOpened
+                : styles.dropdownClosed
             )}
           >
             <ul>
