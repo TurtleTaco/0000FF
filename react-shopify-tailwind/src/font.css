@@ -3,9 +3,9 @@
   font-family: "Alata", cursive;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Cousine");
-.FrontPageShopButtonFont {
-  font-family: "Cousine", cursive;
+@import url("https://fonts.googleapis.com/css?family=Michroma");
+.FrontPageShopButton {
+  font-family: "Michroma", cursive;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
