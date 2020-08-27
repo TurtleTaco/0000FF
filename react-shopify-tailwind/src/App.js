@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import Header from "./Header";
 //import "./Dropdown.css";
 //import "./Font.css";
-import MainPage from "./MainPage";
+// import MainPage from "./MainPage";
+// import ProductListing from "./ProductListing";
+
+// Testing product list card
 import ProductListing from "./ProductListing";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-  } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -40,27 +39,26 @@ class App extends Component {
 
   render() {
     return (
-    <Router>
-      <div id="container" className="min-w-full bg-grey-500 ">
-        <div className="text-center py-2 bg-gray-400 text-black text-xs underline FrontPageShopButtonFont">
-          {" "}
-          Covid-19 Store Update{" "}
+      <Router>
+        <div id="container" className="min-w-full bg-grey-500 ">
+          <div className="text-center py-2 bg-gray-400 text-black text-xs underline FrontPageShopButtonFont">
+            {" "}
+            Covid-19 Store Update{" "}
+          </div>
+
+          <Header />
+
+          <Switch>
+            <Route exact path="/search">
+              <MainPage />
+            </Route>
+            <Route path="/manlisting">
+              <ProductListing />
+            </Route>
+            <Route path="/womanlisting"></Route>
+          </Switch>
         </div>
-
-        <Header />
-
-        <Switch>
-          <Route exact path="/search">
-            <MainPage /> 
-          </Route>
-          <Route path="/manlisting">
-            <ProductListing />
-          </Route>
-          <Route path="/womanlisting">
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+      </Router>
     );
   }
 }
