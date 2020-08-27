@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Link from "next/link";
 
 class HeaderItem extends Component {
   constructor(props) {
@@ -30,9 +29,7 @@ class HeaderItem extends Component {
           onMouseLeave={this.handleMouseHover}
           onMouseEnter={this.handleMouseHover}
         >
-            <Link href={this.props.href} as={this.props.as}>
-            {this.props.title}
-            </Link>
+          {this.props.title}
         </span>
       </div>
     );
@@ -41,7 +38,6 @@ class HeaderItem extends Component {
 
 HeaderItem.defaultProps = {
   fontSize: "text-xs",
-  href: "/"
 };
 
 export default HeaderItem;
