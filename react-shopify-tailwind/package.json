@@ -11,9 +11,11 @@
     "firebase": "^7.17.2",
     "lodash-es": "^4.17.11",
     "material-design-icons": "^3.0.1",
+    "next": "^9.5.2",
     "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-slideshow-image": "^3.1.0",
     "react-spring": "^9.0.0-beta.3",
@@ -24,13 +26,14 @@
   },
   "scripts": {
     "build:tailwind": "tailwind build src/tailwind.css -o src/tailwind.output.css",
-    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
-    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
-    "start:react": "react-scripts start",
+    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",    "start:react": "react-scripts start",
     "prebuild": "run-s build:tailwind",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build" : "next build ./src",
+    "start" :  "npm-run-all build:tailwind --parallel watch:tailwind start:next",
+    "dev" : "next ./src",
+    "start:next" : "next start ./src"
   },
   "browserslist": {
     "production": [

@@ -1,29 +1,11 @@
 import React, { useState, useEffect } from "react";
-import db from "./FirebaseConfig";
+//import db from "./FirebaseConfig";
 import HeaderItem from "./HeaderItem";
-import "./Font.css";
 
 function Collage() {
   // {key, name, url}
   var [items, setItems] = useState([]);
-
-  // useEffect will only run once when the Collage component is being loaded
-  // Fetch from firebase
-  useEffect(() => {
-    // Fetch database from firebase
-    const unsubscribe = db
-      .collection("items")
-      .onSnapshot((snapshot) =>
-        setItems(snapshot.docs.map((doc) => doc.data()))
-      );
-
-    // cleanup function
-    return () => {
-      // detach the database listener
-      unsubscribe();
-    };
-  }, []);
-
+  
   return (
     <div>
       <div

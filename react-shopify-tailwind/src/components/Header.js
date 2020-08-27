@@ -3,8 +3,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import DropdownItem from "./DropdownItem";
 import HeaderItem from "./HeaderItem";
-import "./Dropdown.css";
-import "./Font.css";
+import styles from "./Dropdown.module.css";
+import "./Font.module.css";
+import Link from "next/link";
 
 class Header extends Component {
   constructor() {
@@ -47,11 +48,13 @@ class Header extends Component {
         {/* Header */}
         <div className="flex items-center mt-1 border-b">
           <div className="flex-shrink-0 px-4 ">
-            <img
-              className="w-32 md:w-56 pt-3 pb-3"
-              src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
-              style={{ width: `100px`, height: `auto` }}
-            />
+            <Link href="/">
+              <img
+                className="w-32 md:w-56 pt-3 pb-3"
+                src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
+                style={{ width: `100px`, height: `auto` }}
+              />
+            </Link>
           </div>
 
           <div className="flex-1 px-4 py-2 block md:hidden">
@@ -63,7 +66,7 @@ class Header extends Component {
           </div>
 
           <div className="hidden px-10 py-2 md:block md:flex-1 FrontPageShopButtonFont">
-            <HeaderItem title="Search" />
+            <HeaderItem title="Search" href="/productlistingpage" />
             <HeaderItem title="Woman" />
             <HeaderItem title="Man" />
             <HeaderItem title="New Releases" />
@@ -74,7 +77,9 @@ class Header extends Component {
         {
           <div
             className={this.dropdownStyle.concat(
-              this.state.menuOpened ? "dropdownOpened" : "dropdownClosed"
+              this.state.menuOpened
+                ? styles.dropdownOpened
+                : styles.dropdownClosed
             )}
           >
             <ul>

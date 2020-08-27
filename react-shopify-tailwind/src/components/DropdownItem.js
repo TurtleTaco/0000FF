@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./DropdownItem.css";
 
 class DropdownItem extends Component {
   constructor(props) {
@@ -9,7 +8,7 @@ class DropdownItem extends Component {
       isHovered: false,
     };
 
-    this.hoverStyle = "text-center pl-5 py-2 text-xs ";
+    this.hoverStyle = "text-center py-2 text-xs ";
   }
 
   handleDropdownItemMouseHover = () => {
@@ -24,13 +23,13 @@ class DropdownItem extends Component {
         <li
           className={this.hoverStyle.concat(
             this.state.isHovered
-              ? "text-black bg-gray-100 dropdownItemHovered"
+              ? "text-black bg-gray-100 "
               : "text-white bg-black"
           )}
           onMouseLeave={this.handleDropdownItemMouseHover}
           onMouseEnter={this.handleDropdownItemMouseHover}
         >
-          {this.props.title.concat(this.state.isHovered ? "" : "")}
+          {this.props.title}
         </li>
       </div>
     );
