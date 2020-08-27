@@ -66,9 +66,9 @@ class Header extends Component {
           </div>
 
           <div className="hidden px-10 py-2 md:block md:flex-1 FrontPageShopButtonFont">
-              <HeaderItem title="Search" href="/productlistingpage" />
+              <HeaderItem title="Search" />
               <HeaderItem title="Woman" />
-              <HeaderItem title="Man" />
+              <HeaderItem title="Man" href="/[type]" as="/productlistingpage"/>
               <HeaderItem title="New Releases" />
           </div>
         </div>

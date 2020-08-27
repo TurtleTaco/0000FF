@@ -8,11 +8,11 @@ class ProductListingCard extends Component {
     super(props);
 
     this.state = {
-        index : 1,
+        index : 0,
     }
 
     this.images = [
-        "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_05.jpg?v=1597605871",
+        props.imageUrl,
         "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_04.jpg?v=1597605871",
         "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_05.jpg?v=1597605871",
         "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_04.jpg?v=1597605871",

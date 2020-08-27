@@ -30,7 +30,7 @@ class HeaderItem extends Component {
           onMouseLeave={this.handleMouseHover}
           onMouseEnter={this.handleMouseHover}
         >
-            <Link href={this.props.href}>
+            <Link href={this.props.href} as={this.props.as}>
             {this.props.title}
             </Link>
         </span>

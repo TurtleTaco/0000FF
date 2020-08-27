@@ -20,19 +20,21 @@
     "react-spring": "^9.0.0-beta.3",
     "react-use-gesture": "^5.0.0",
     "scroll-snap": "^3.0.2",
+    "shopify-buy": "^2.11.0",
     "tailwindcss": "^1.6.2",
     "typescript": "^3.9.7"
   },
   "scripts": {
     "build:tailwind": "tailwind build src/tailwind.css -o src/tailwind.output.css",
-    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",    "start:react": "react-scripts start",
+    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
+    "start:react": "react-scripts start",
     "prebuild": "run-s build:tailwind",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build" : "next build ./src",
-    "start" :  "npm-run-all build:tailwind --parallel watch:tailwind start:next",
-    "dev" : "next ./src",
-    "start:next" : "next start ./src"
+    "build": "next build ./src",
+    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:next",
+    "dev": "next ./src",
+    "start:next": "next start ./src"
   },
   "browserslist": {
     "production": [
