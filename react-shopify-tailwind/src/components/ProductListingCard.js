@@ -14,18 +14,13 @@ class ProductListingCard extends Component {
       isHovered: false,
     };
 
-    // Props sent from product listings, reflecting real time Shopify content
-    props.imageURL = [
-      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_full_body.jpg?v=1598321085",
-      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_front.jpg?v=1598321085",
-      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_back.jpg?v=1598321085",
-      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_side.jpg?v=1598321085",
-    ];
-    props.thumbnail =
-      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_shirt.jpg?v=1598321085";
-    props.title = "Hawaiian Shirt";
-    props.price = "1350";
-    props.description = "This is a temporary description";
+    // This is the image displayed by default on the product listing page
+    this.itemFrontImage = props.thumbnail;
+    // This is the array of images displayed by hover effect
+    this.images = props.imageUrls;
+    this.title = props.title;
+    this.size = this.images.length;
+    this.price = props.price;
 
     // Styling
     this.leftArrowStyle = "arrowgroup absolute";

@@ -7,11 +7,11 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import styles from "../components/Dropdown.module.css";
 import Client from "shopify-buy";
 
-function ProductListing({ decodedProducts, time1, time2, time3, time4 }) {
+function ProductListing({ productsJson }) {
   const [isFilterOpened, setFilterOpenStatus] = useState(false);
   const [isSortOpened, setSortOpenStatus] = useState(false);
 
-  let productObjects = JSON.parse(decodedProducts);
+  let productObjects = JSON.parse(productsJson);
 
   var sortDropdownWidthMediunScreen = "w-2/12";
   var filterDropdownWidthMediunScreen = "w-2/12";
@@ -19,21 +19,6 @@ function ProductListing({ decodedProducts, time1, time2, time3, time4 }) {
 
   var sortDropdownWidthSmallScreen = "w-4/12";
   var navigationWidthSmallScreen = "w-4/12";
-  var products = [
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-  ];
 
   let sortOptions = [
     <DropdownItem title="Price" />,
@@ -53,9 +38,14 @@ function ProductListing({ decodedProducts, time1, time2, time3, time4 }) {
   ];
 
   let displayProducts = productObjects.map((product) => {
+    let urls = []
+    product.images.map((image) => {
+        urls.push(image.src)
+    })
     return (
       <div className="w-1/2 pr-px pl-px pb-px inline-block md:w-1/3 lg:w-1/4">
-        <ProductListingCard imageUrl={product.images[0].src} />
+        <ProductListingCard thumbnail={urls.shift()} imageUrls={urls} 
+        title={product.title} description={product.description} price={product.variants[0].price}  />
       </div>
     );
   });
@@ -184,20 +174,19 @@ export async function getStaticProps() {
     domain: "richmofo.myshopify.com",
   });
 
-  var mproducts;
+  var products;
   var callback = (res) => {
-    mproducts = res;
+    products = res;
   };
 
-  var time2 = JSON.stringify(new Date());
+  //var time2 = JSON.stringify(new Date());
   await client.product.fetchAll().then(callback);
-  var decodedProducts = "hahah";
-  var decodedProducts = JSON.stringify(mproducts);
-  var time3 = JSON.stringify(new Date());
+  var productsJson = JSON.stringify(products);
+  //var time3 = JSON.stringify(new Date());
   //let id = params ? params.id : "woman"
   // Pass post data to the page via props
-  var time4 = "aa";
-  return { props: { decodedProducts, time1, time2, time3, time4 } };
+  //var time4 = "aa";
+  return { props: { productsJson } };
 }
 
 export default ProductListing;

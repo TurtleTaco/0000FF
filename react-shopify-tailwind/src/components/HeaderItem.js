@@ -9,7 +9,7 @@ class HeaderItem extends Component {
     };
 
     // add a space behind the last style class for some reason
-    this.hoverStyle = "float-right ml-6 cursor-pointer ".concat(
+    this.hoverStyle = "ml-6 cursor-pointer ".concat(
       this.props.fontSize + " "
     );
   }
