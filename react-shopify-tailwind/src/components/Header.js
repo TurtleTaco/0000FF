@@ -43,21 +43,27 @@ class Header extends Component {
   }
 
   render() {
+
     return (
-      <div ref={this.wrapperRef}>
-        {/* Header */}
-        <div className="flex items-center mt-1 border-b">
-          <div className="flex-shrink-0 px-4 ">
+      <div id="header" className="sticky top-0 z-20" ref={this.wrapperRef}>
+    
+        {/* Header In Small Screen */}
+        <div className="flex items-center mt-1 md:hidden"
+         style={{
+          backgroundColor: `white`,
+        }}>
+
+          <div className="flex-shrink-0 px-4">
             <Link href="/">
               <img
-                className="w-32 md:w-56 pt-3 pb-3"
+                className="w-32 py-3"
                 src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
-                style={{ width: `100px`, height: `auto` }}
+                style={{ width: `150px`, height: `auto` }}
               />
             </Link>
           </div>
 
-          <div className="flex-1 px-4 py-2 block md:hidden">
+          <div className="flex-1 px-4 py-2 block">
             <MenuIcon
               className="float-right ml-3"
               onClick={this.handleHeaderMenuClick}
@@ -65,15 +71,39 @@ class Header extends Component {
             <SearchIcon className="float-right ml-3" />
           </div>
 
-          <div className="hidden px-10 py-2 md:block md:flex-1 FrontPageShopButtonFont">
-              <HeaderItem title="Search" />
-              <HeaderItem title="Woman" />
-              <HeaderItem title="Man" href="/[type]" as="/productlistingpage"/>
-              <HeaderItem title="New Releases" />
-          </div>
         </div>
 
-        {/* Header Dropdown*/}
+        {/* Header In Large Screen */}
+        <div className="flex flex-col justify-center">
+          <div className="hidden px-4 justify-center md:flex md:justify-center">
+              <Link href="/">
+              <div id="header-image-container">
+                <img
+                  className="w-32 py-3"
+                  src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
+                  style={{ width: `150px`, height: `auto`}}
+                />
+              </div>
+              </Link>
+            </div>
+
+            <div id="header-options" className=" hidden px-10 py-2 md:flex md:flex-row md:justify-center FrontPageShopButtonFont">
+                <div>
+                  <HeaderItem title="Search" />
+                </div>
+                <div>
+                  <HeaderItem title="Woman" />
+                </div>
+                <div> 
+                  <HeaderItem title="Man" href="/[type]" as="/productlistingpage"/>
+                </div>
+                <div>
+                  <HeaderItem title="New Releases" />
+                </div>
+            </div>
+        </div>
+
+        {/* Header Dropdown In Small Screen*/}
         {
           <div
             className={this.dropdownStyle.concat(
@@ -90,6 +120,7 @@ class Header extends Component {
             </ul>
           </div>
         }
+
       </div>
     );
   }
