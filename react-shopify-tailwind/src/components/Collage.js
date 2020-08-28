@@ -5,7 +5,7 @@ import HeaderItem from "./HeaderItem";
 function Collage() {
   // {key, name, url}
   var [items, setItems] = useState([]);
-  
+
   return (
     <div>
       <div
@@ -113,7 +113,7 @@ function Collage() {
         </div>
       </div>
 
-      <div className="px-8 w-full">
+      <div className="px-8 w-full hidden">
         <div className="mb-3 flex align-middle min-w-full text-black text-2xl pt-4 sm:min-w-full md:hidden">
           <div className="flex flex-1">
             <h1 className="text-l text-gray-500">Shop</h1>

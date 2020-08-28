@@ -9,11 +9,6 @@ const cards = [
   "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/aw_04.jpg?v=1597550146",
   "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/aw_01.jpg?v=1597550146",
   "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/aw_02.jpg?v=1597550146",
-  // "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_01.jpg?v=1597605871",
-  // "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_02.jpg?v=1597605871",
-  // "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_03.jpg?v=1597605871",
-  // "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_04.jpg?v=1597605871",
-  // "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/ysl_05.jpg?v=1597605871",
 ];
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -71,7 +66,7 @@ function Deck() {
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return props.map(({ x, y, rot, scale }, i) => (
     <animated.div
-      className = {styles.deckFirstLevel}
+      className={styles.deckFirstLevel}
       key={i}
       style={{
         transform: interpolate(
@@ -83,7 +78,7 @@ function Deck() {
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
       <animated.div
         {...bind(i)}
-        className = {styles.deckSecondLevel}
+        className={styles.deckSecondLevel}
         style={{
           transform: interpolate([rot, scale], trans),
           backgroundImage: `url(${cards[i]})`,

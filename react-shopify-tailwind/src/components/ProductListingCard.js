@@ -14,18 +14,18 @@ class ProductListingCard extends Component {
       isHovered: false,
     };
 
-    // This is the image displayed by default on the product listing page
-    this.itemFrontImage =
-      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_shirt.jpg?v=1598321085";
-    // This is the array of images displayed by hover effect
-    this.images = [
-      props.imageUrl,
+    // Props sent from product listings, reflecting real time Shopify content
+    props.imageURL = [
       "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_full_body.jpg?v=1598321085",
       "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_front.jpg?v=1598321085",
       "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_back.jpg?v=1598321085",
       "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_side.jpg?v=1598321085",
     ];
-    this.size = this.images.length;
+    props.thumbnail =
+      "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/guc_shirt.jpg?v=1598321085";
+    props.title = "Hawaiian Shirt";
+    props.price = "1350";
+    props.description = "This is a temporary description";
 
     // Styling
     this.leftArrowStyle = "arrowgroup absolute";
@@ -145,12 +145,12 @@ class ProductListingCard extends Component {
               <div style={{ backgroundColor: `#FFFFFF` }}>
                 <div className="flex justify-center">
                   <div className="text-base pt-1 ProductPageFont">
-                    Hawaiian Shirt
+                    {this.props.title}
                   </div>
                 </div>
                 <div className="flex justify-center ">
                   <div className="text-base text-gray-500 pt-2 pb-2 ProductPageFont">
-                    C$ 1,350
+                    {"C$ ".concat(this.props.price)}
                   </div>
                 </div>
                 <div className="justify-center hidden md:flex">
@@ -166,11 +166,13 @@ class ProductListingCard extends Component {
           style={{ backgroundColor: `#E7E7E7` }}
         >
           <div className="flex justify-center">
-            <div className="text-base pt-1 ProductPageFont">Hawaiian Shirt</div>
+            <div className="text-base pt-1 ProductPageFont">
+              {this.props.title}
+            </div>
           </div>
           <div className="flex justify-center ">
             <div className="text-base text-gray-500 pt-2 pb-2 ProductPageFont">
-              C$ 1,350
+              {"C$ ".concat(this.props.price)}
             </div>
           </div>
         </div>
