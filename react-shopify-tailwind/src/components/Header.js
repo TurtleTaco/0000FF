@@ -4,6 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DropdownItem from "./DropdownItem";
 import HeaderItem from "./HeaderItem";
 import styles from "./Dropdown.module.css";
+import HeaderStyles from "./Header.module.css";
 import "./Font.module.css";
 import Link from "next/link";
 
@@ -34,15 +35,38 @@ class Header extends Component {
     }
   };
 
+  handleWindowScroll = () => {
+    var scroll = window.pageYOffset; 
+          var pageHeaderImage = document.getElementById("header-image-container");
+          var pageHeaderOptions = document.getElementById("header-options")
+        
+          if(scroll > 550){
+              //pageHeaderImage.style["display"] = "none";
+              pageHeaderImage.classList.remove(HeaderStyles.headerOpened);
+              pageHeaderImage.classList.add(HeaderStyles.headerClosed);
+              pageHeaderOptions.style["background-color"] = "black";
+              pageHeaderOptions.style["color"] = "white";
+          } else if(scroll == 0){
+              //pageHeaderImage.style["display"] = "block";
+              pageHeaderImage.classList.remove(HeaderStyles.headerClosed);
+              pageHeaderImage.classList.add(HeaderStyles.headerOpened);
+              pageHeaderOptions.style["background-color"] = "transparent";
+              pageHeaderOptions.style["color"] = "black";
+          } 
+  }
+
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
+    window.addEventListener("scroll", this.handleWindowScroll); 
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
+    window.removeEventListener("scroll", this.handleWindowScroll);
   }
 
   render() {
+
     return (
       <div id="header" className="sticky top-0 z-20" ref={this.wrapperRef}>
         {/* Header In Small Screen */}
