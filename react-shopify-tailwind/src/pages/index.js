@@ -44,7 +44,7 @@ const Index = () => {
                 {" "}
                 Covid-19 Store Update{" "}
                 </div>
-                <Header />
+                <Header shrinkOffset="550"/>
                 <MainPage />
             </div>
         </div>

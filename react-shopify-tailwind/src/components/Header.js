@@ -9,8 +9,8 @@ import "./Font.module.css";
 import Link from "next/link";
 
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       menuOpened: false,
@@ -19,6 +19,7 @@ class Header extends Component {
 
     this.wrapperRef = React.createRef();
     this.dropdownStyle = "absolute w-screen z-10 ";
+    this.headerImageUrl = "https://cdn.shopify.com/s/files/1/0452/6548/5989/files/black_transparent.png?v=1598671285";
   }
 
   handleHeaderMenuClick = () => {
@@ -40,7 +41,7 @@ class Header extends Component {
           var pageHeaderImage = document.getElementById("header-image-container");
           var pageHeaderOptions = document.getElementById("header-options")
         
-          if(scroll > 550){
+          if(scroll > this.props.shrinkOffset){
               //pageHeaderImage.style["display"] = "none";
               pageHeaderImage.classList.remove(HeaderStyles.headerOpened);
               pageHeaderImage.classList.add(HeaderStyles.headerClosed);
@@ -80,8 +81,8 @@ class Header extends Component {
             <Link href="/">
               <img
                 className="w-32 py-3"
-                src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
-                style={{ width: `150px`, height: `auto` }}
+                src={this.headerImageUrl}
+                style={{ width: `100px`, height: `auto` }}
               />
             </Link>
           </div>
@@ -102,7 +103,7 @@ class Header extends Component {
               <div id="header-image-container">
                 <img
                   className="w-32 py-3"
-                  src="https://cdn.shopify.com/s/files/1/0452/6548/5989/files/IconBrandSymble_e63b31bf-3290-4244-98c6-1e75efff1ef5.jpg?v=1597545211"
+                  src={this.headerImageUrl}
                   style={{ width: `150px`, height: `auto` }}
                 />
               </div>

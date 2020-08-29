@@ -72,11 +72,15 @@ function ProductListing({ productsJson }) {
 
   return (
     <div className="absolute w-full">
-      <Header />
+      <Header shrinkOffset="40"/>
 
       <div
-        className="mx-3"
+        className="mx-1 bg-gray-100"
         onMouseLeave={HandleNavigationMouseLeaveEventChange}
+        style={{
+            borderTop: `0px solid black`,
+            borderBottom: `0px solid black`
+          }}
       >
         <div
           className={`${navigationWidthSmallScreen} md:${navigationWidthMediunScreen} inline-block pl-6 text-left text-xs FrontPageShopButtonFont`}
@@ -89,10 +93,10 @@ function ProductListing({ productsJson }) {
           onMouseEnter={HandleFilterHoverEventChange}
         >
           <div
-            className={`underline text-center text-xs FrontPageShopButtonFont my-2`}
+            className={`text-center text-xs FrontPageShopButtonFont my-1 `}
             style={{
-              borderRight: `1px solid #a0acc0`,
-              borderLeft: `1px solid #a0acc0`,
+              borderRight: `2px solid white`,
+              borderLeft: `2px solid white`,
             }}
           >
             Filter <ArrowDropDownIcon />
@@ -117,8 +121,7 @@ function ProductListing({ productsJson }) {
           onMouseEnter={HandleSortHoverEventChange}
         >
           <div
-            className={`w-full inline-block text-center text-xs FrontPageShopButtonFont my-2`}
-            style={{ borderRight: `1px solid #e2e8f0` }}
+            className={`w-full inline-block text-center text-xs FrontPageShopButtonFont my-1`}
           >
             Sort by : Name <ArrowDropDownIcon />
           </div>
@@ -162,7 +165,7 @@ function ProductListing({ productsJson }) {
         </div>
       </div>
 
-      <div className="mx-1">{displayProducts}</div>
+      <div className="mx-1 mt-2">{displayProducts}</div>
     </div>
   );
 }
