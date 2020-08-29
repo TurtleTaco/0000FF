@@ -168,7 +168,6 @@ function ProductListing({ productsJson }) {
 }
 
 export async function getStaticProps() {
-  var time1 = JSON.stringify(new Date());
   const client = Client.buildClient({
     storefrontAccessToken: "7301dedacfd3710acf80b7325d95a259",
     domain: "richmofo.myshopify.com",
@@ -179,13 +178,8 @@ export async function getStaticProps() {
     products = res;
   };
 
-  //var time2 = JSON.stringify(new Date());
   await client.product.fetchAll().then(callback);
   var productsJson = JSON.stringify(products);
-  //var time3 = JSON.stringify(new Date());
-  //let id = params ? params.id : "woman"
-  // Pass post data to the page via props
-  //var time4 = "aa";
   return { props: { productsJson } };
 }
 
