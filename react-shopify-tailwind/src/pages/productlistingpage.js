@@ -38,14 +38,19 @@ function ProductListing({ productsJson }) {
   ];
 
   let displayProducts = productObjects.map((product) => {
-    let urls = []
+    let urls = [];
     product.images.map((image) => {
-        urls.push(image.src)
-    })
+      urls.push(image.src);
+    });
     return (
       <div className="w-1/2 pr-px pl-px pb-px inline-block md:w-1/3 lg:w-1/4">
-        <ProductListingCard thumbnail={urls.shift()} imageUrls={urls} 
-        title={product.title} description={product.description} price={product.variants[0].price}  />
+        <ProductListingCard
+          thumbnail={urls.shift()}
+          imageUrls={urls}
+          title={product.title}
+          description={product.description}
+          price={product.variants[0].price}
+        />
       </div>
     );
   });

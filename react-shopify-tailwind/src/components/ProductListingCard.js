@@ -139,7 +139,7 @@ class ProductListingCard extends Component {
               </div>
               <div style={{ backgroundColor: `#FFFFFF` }}>
                 <div className="flex justify-center">
-                  <div className="text-base pt-1 ProductPageFont">
+                  <div className="text-base pt-3 ProductPageFont">
                     {this.props.title}
                   </div>
                 </div>
@@ -158,6 +158,7 @@ class ProductListingCard extends Component {
 
         <div
           // className={this.state.isHovered ? "block" : "block"}
+          className="hidden"
           style={{ backgroundColor: `#E7E7E7` }}
         >
           <div className="flex justify-center">
